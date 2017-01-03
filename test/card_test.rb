@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/card'
 require './lib/guess'
-require 'pry'
 
 class CardTest < Minitest::Test
 
@@ -18,9 +17,3 @@ class CardTest < Minitest::Test
   end
 
 end
-
-# card = Card.new("What is the capital of Alaska?", "Juneau")
-# card.question
-# => "What is the capital of Alaska?"
-# card.answer
-# => "Juneau"

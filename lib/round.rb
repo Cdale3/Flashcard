@@ -15,7 +15,9 @@ class Round
 
   def record_guess(guess)
     @guesses << Guess.new(guess, current_card)
-    binding.pry
   end
 
+  def first_feedback
+    puts "Correct!"
+  end
 end

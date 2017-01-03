@@ -2,14 +2,15 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/guess'
 require './lib/card'
-require 'pry'
+require './lib/round'
+require './lib/deck'
+
 
 class GuessTest < Minitest::Test
 
   def test_it_guesses
     card = Card.new("What is the capital of Alaska?", "Juneau")
     guess = Guess.new("Juneau", card)
-    # binding.pry
     assert_instance_of Guess, guess
   end
 
@@ -40,7 +41,6 @@ class GuessTest < Minitest::Test
   def test_glaxy_answer
     card = Card.new("Which planet is closest to the sun?", "Mercury")
     guess = Guess.new("Saturn", card)
-    # binding.pry
     assert_equal false, guess.correct?
   end
 
