@@ -6,7 +6,6 @@ class Round
     @deck = deck
     @guesses = []
     @current_card = draw_card
-    @first = guesses[0]
   end
 
   def draw_card
@@ -17,7 +16,13 @@ class Round
     @guesses << Guess.new(guess, current_card)
   end
 
-  def first_feedback
-    puts "Correct!"
+  def correct?
+    round.guesses[0].user_guess == card.answer
   end
+
+  def first_feedback
+    return "Correct!" if correct? == true
+    return "Incorrect!" if correct? != true
+  end
+
 end

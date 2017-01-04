@@ -4,6 +4,7 @@ require './lib/guess'
 require './lib/card'
 require './lib/round'
 require './lib/deck'
+require 'pry'
 
 class RoundTest < Minitest::Test
 
@@ -56,6 +57,7 @@ class RoundTest < Minitest::Test
     deck = Deck.new([card_1, card_2])
     round = Round.new(deck)
     round.record_guess("Juneau")
+    binding.pry
     assert_equal "Juneau", round.guesses[0].user_guess
   end
 end
