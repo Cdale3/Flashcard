@@ -15,6 +15,9 @@ card1 = Card.new("What is the best sport in the world?", "Football")
 card2 = Card.new("What is the best city in the country?", "Denver")
 card3 = Card.new("What is a bar for nerds in Denver?  (Hint: it has one digit in the answer)", "1up")
 card4 = Card.new("What is the elevation of Denver(in feet)?", "5280")
+round = Round.new(deck)
+
+round.start
 
 deck.cards << card1
 deck.cards << card2
