@@ -30,7 +30,7 @@ class RoundTest < Minitest::Test
     card_2 = Card.new("Approximately how many miles are in one astronomical unit?", "93,000,000")
     deck = Deck.new([card_1, card_2])
     round = Round.new(deck)
-    assert_instance_of Card, round.current_card
+    assert_instance_of Card, deck.cards.sample
   end
 
   def test_it_records_guesses
@@ -57,7 +57,14 @@ class RoundTest < Minitest::Test
     deck = Deck.new([card_1, card_2])
     round = Round.new(deck)
     round.record_guess("Juneau")
-    binding.pry
     assert_equal "Juneau", round.guesses[0].user_guess
+  end
+
+  def test_we_can_show_percentage
+    card_1 = Card.new("What is the capital of Alaska?", "Juneau")
+    card_2 = Card.new("Approximately how many miles are in one astronomical unit?", "93,000,000")
+    deck = Deck.new([card_1, card_2])
+    round = Round.new(deck)
+
   end
 end

@@ -1,4 +1,5 @@
 require 'pry'
+require './lib/guess'
 class Round
   attr_reader :deck, :guesses, :current_card, :first
 
@@ -9,7 +10,7 @@ class Round
   end
 
   def draw_card
-    @deck.cards.shift
+    @deck.cards.sample(1)
   end
 
   def record_guess(guess)
